@@ -1,14 +1,15 @@
-import React, { useState } from "react";
 import {
   Button,
-  TextInput,
-  Stack,
   Container,
   CopyButton,
   Group,
+  Stack,
+  TextInput,
 } from "@mantine/core";
-import generatePassword from "./utils/key-generator";
+import { useState } from "react";
 import "./App.css";
+import { Image } from "@mantine/core";
+import generatePassword from "./utils/key-generator";
 
 function App() {
   const [key, setKey] = useState<string>("");
@@ -21,7 +22,12 @@ function App() {
   return (
     <Container size="sm" pt="xl">
       <Stack>
-        <h1 className="text-xl font-bold text-green-600">Key Generator</h1>
+        <div className="flex flex-col items-center justify-center mb-5 space-y-2">
+          <Image radius="md" w={50} src="logo-key-gen-core.jpg" />
+          <h1 className="text-xl font-bold text-green-600">Key Generator</h1>
+        </div>
+
+        
 
         <TextInput value={key} readOnly placeholder="Click generate" />
 
